@@ -858,7 +858,7 @@
              VISTA 0: INICIO, BIENVENIDA Y RUTA DE 8 SEMANAS
              ================================================================== -->
         <section id="view-0" class="view-section active">
-          <span class="washi-tape">📌 Cartilla Digital Interactiva • Offline y con Soporte Google Drive</span>
+          <span class="washi-tape">📌 Cartilla Digital Interactiva • Offline y con Enlaces Web (GitHub / MP3)</span>
           <h2 style="font-size: 1.75rem; color: var(--border-sketch); margin-bottom: 8px;">
             ¡Hola, Gabrielista! Bienvenido a <em>Songs That Write My Story</em> 🎸✨
           </h2>
@@ -942,7 +942,7 @@
           <span class="washi-tape washi-teal">🎧 Activación de Vocabulario y Oído Musical</span>
           <h2 style="font-size:1.6rem; margin-bottom:6px;">Calentamiento: Canciones, Ritmo y Flashcards</h2>
           <p style="margin-bottom:16px;">
-            Escucha la canción vinculada en Google Drive, MP3 local o melodía base, completa la letra y repasa tus tarjetas visuales de vocabulario.
+            Escucha la canción por enlace web (GitHub Pages / MP3), archivo local o melodía base, completa la letra y repasa tus tarjetas visuales de vocabulario.
           </p>
 
           <div class="sticker-card pastel-yellow">
@@ -1291,10 +1291,10 @@
              VISTA 6: CARPETA DE RECURSOS OFFLINE (CARTILLAS IMPRIMIBLES + CANCIONES)
              ================================================================== -->
         <section id="view-6" class="view-section">
-          <span class="washi-tape">📁 Repositorio • Cartillas Imprimibles, MP3 y Google Drive</span>
+          <span class="washi-tape">📁 Repositorio • Cartillas Imprimibles, Enlaces MP3 y Lyrics</span>
           <h2 style="font-size:1.6rem; margin-bottom:6px;">Carpeta de Recursos (Aula Rural San Gabriel)</h2>
           <p style="margin-bottom:16px;">
-            Aquí encuentras las <strong>cartillas listas para imprimir o descargar</strong> y la <strong>biblioteca musical</strong> donde puedes vincular canciones desde <strong>Google Drive</strong> (sin guardarlas en carpetas locales) o asignar archivos MP3.
+            Aquí encuentras las <strong>cartillas listas para imprimir o descargar</strong> y la <strong>biblioteca musical</strong> donde puedes guardar enlaces directos de <strong>GitHub / Web para tus canciones MP3 y letras (Lyrics)</strong>, o subir archivos locales.
           </p>
 
           <!-- BLOQUE A: ARCHIVADOR DE CARTILLAS IMPRIMIBLES -->
@@ -1359,7 +1359,7 @@
 
           <!-- BLOQUE B: GESTOR DE BIBLIOTECA MUSICAL CON GOOGLE DRIVE -->
           <div class="folder-tabs-bar">
-            <div class="folder-ear" style="background:#E0F5F2;">🎵 Archivador 2: Biblioteca Musical (Google Drive & MP3)</div>
+            <div class="folder-ear" style="background:#E0F5F2;">🎵 Archivador 2: Biblioteca Musical (Enlaces MP3, Lyrics y Archivos)</div>
           </div>
           <div class="folder-body" style="background:#F0FDFA;">
 
@@ -1368,7 +1368,7 @@
                 <div>
                   <h4 style="margin-bottom:4px;">🎼 Gestor de canciones del proyecto</h4>
                   <p style="font-size:0.86rem; color:var(--ink-muted);">
-                    Vincula canciones desde <strong>Google Drive</strong> (sin guardarlas en carpetas locales), o asigna MP3 y letras a cada actividad.
+                    Pega enlaces directos de <strong>GitHub Pages / Web</strong> para el audio <strong>MP3</strong> y la letra (<strong>Lyrics</strong>), o sube archivos desde tu equipo.
                   </p>
                 </div>
                 <div style="display:flex; flex-wrap:wrap; gap:8px;">
@@ -1378,7 +1378,7 @@
                 </div>
               </div>
               <div id="songsFolderStatus" style="margin-top:10px; font-size:0.84rem; font-weight:bold; color:var(--ink-muted);">
-                ☁️ Puedes vincular enlaces de Google Drive en <strong>➕ Agregar canción</strong> o <strong>✏️ Editar</strong> (recuerda poner el archivo en Drive como <em>"Cualquier persona con el enlace"</em>).
+                🌐 Pega enlaces directos de <strong>GitHub Pages</strong> (ej. <code>https://usuario.github.io/repo/audio/cancion.mp3</code> y <code>.../lyrics/letra.txt</code>) en <strong>➕ Agregar canción</strong> o <strong>✏️ Editar</strong>.
               </div>
             </div>
 
@@ -1436,25 +1436,34 @@
               <label style="font-weight:bold; font-size:0.88rem;">Nivel / Contenido gramatical:</label>
               <input type="text" id="editSongLevel" class="story-input" style="margin-bottom:10px;" placeholder="Ej: Pre A1 • Presente Simple" />
 
-              <!-- Nuevo campo: Enlace de Google Drive -->
+              <!-- Sección 1: Audio MP3 (Enlace Web / GitHub o Archivo Local) -->
               <div style="background:#EFF6FF; border:2px dashed #3B82F6; border-radius:12px; padding:10px; margin-bottom:10px;">
                 <label style="font-weight:bold; font-size:0.88rem; color:#1E40AF; display:block; margin-bottom:4px;">
-                  ☁️ Enlace de Google Drive (Recomendado - sin carpeta local):
+                  🎧 Enlace de la canción MP3 (GitHub Pages / URL directa):
                 </label>
-                <input type="url" id="editSongDriveUrl" class="story-input" placeholder="Pega aquí el enlace de Drive: https://drive.google.com/file/d/..." />
-                <p style="font-size:0.78rem; color:#1E3A8A; margin-top:4px;">
-                  💡 En Google Drive: clic derecho en tu MP3 → <strong>Compartir</strong> → <strong>Cualquier persona con el enlace</strong> → <strong>Copiar enlace</strong>.
+                <input type="url" id="editSongDriveUrl" class="story-input" style="margin-bottom:6px;" placeholder="Ej: https://tu-usuario.github.io/ova/audio/count-on-me.mp3" />
+                <p style="font-size:0.76rem; color:#1E3A8A; margin-bottom:6px;">
+                  💡 Acepta enlaces directos <code>.mp3</code> (GitHub Pages, GitHub raw, servidor) o enlaces compartidos de Google Drive.
                 </p>
-              </div>
-
-              <div style="display:flex; flex-direction:column; gap:8px; margin-top:6px;">
-                <label class="btn btn-teal btn-sm" style="cursor:pointer; justify-content:flex-start;">
-                  🎧 O asignar archivo MP3 local (opcional)
+                <label class="btn btn-teal btn-sm" style="cursor:pointer; justify-content:flex-start; width:100%;">
+                  📂 O subir archivo MP3 desde el equipo (opcional)
                   <input type="file" id="editSongMp3" accept=".mp3,audio/*" style="display:none;" onchange="handleEditSongMp3(event)" />
                   <span id="editSongMp3Status" style="font-size:0.78rem; font-weight:normal; margin-left:8px;">(ninguno)</span>
                 </label>
-                <label class="btn btn-yellow btn-sm" style="cursor:pointer; justify-content:flex-start;">
-                  📄 Asignar archivo de letra (.txt)
+              </div>
+
+              <!-- Sección 2: Lyrics / Letra (Enlace Web / GitHub, Texto pegado o Archivo .txt) -->
+              <div style="background:#FFFBEB; border:2px dashed #D99B16; border-radius:12px; padding:10px; margin-bottom:10px;">
+                <label style="font-weight:bold; font-size:0.88rem; color:#92400E; display:block; margin-bottom:4px;">
+                  📄 Enlace de los Lyrics / Letra (.txt en GitHub / URL directa):
+                </label>
+                <input type="url" id="editSongLyricUrl" class="story-input" style="margin-bottom:6px;" placeholder="Ej: https://tu-usuario.github.io/ova/lyrics/count-on-me.txt" />
+                <label style="font-weight:bold; font-size:0.82rem; color:#78350F; display:block; margin-bottom:4px;">
+                  ✍️ O pega/escribe aquí la letra directamente (opcional):
+                </label>
+                <textarea id="editSongLyricText" class="story-pad" rows="3" style="font-size:0.86rem; margin-bottom:6px;" placeholder="Escribe o pega aquí los lyrics de la canción si no usas enlace ni archivo..."></textarea>
+                <label class="btn btn-yellow btn-sm" style="cursor:pointer; justify-content:flex-start; width:100%;">
+                  📂 O subir archivo de letra (.txt)
                   <input type="file" id="editSongLyric" accept=".txt,text/plain" style="display:none;" onchange="handleEditSongLyric(event)" />
                   <span id="editSongLyricStatus" style="font-size:0.78rem; font-weight:normal; margin-left:8px;">(ninguna)</span>
                 </label>
@@ -1526,7 +1535,7 @@
           <strong>🚦 Pestaña 6. Semáforo & Rúbrica:</strong> Semáforo de autoevaluación del estudiante y ficha técnica del plan estratégico UNAD – LabINNOVA.
         </div>
         <div style="background:#FFFBEB; border:2px solid var(--border-sketch); border-radius:12px; padding:10px 12px;">
-          <strong>📁 Pestaña 7. Carpeta Offline:</strong> Cartillas imprimibles y gestor musical donde puedes pegar enlaces compartidos de <strong>Google Drive</strong> para cada canción nueva o existente.
+          <strong>📁 Pestaña 7. Carpeta Offline:</strong> Cartillas imprimibles y gestor musical donde puedes pegar enlaces compartidos de <strong>Google Drive</strong> o enlaces directos de GitHub para cada canción (MP3 y letra).
         </div>
       </div>
 
@@ -1592,12 +1601,17 @@
     /* ------------------------------------------------------------------------
        2. MOTOR DE SONIDO (GOOGLE DRIVE STREAM, MP3 LOCAL Y WEB AUDIO API)
        ------------------------------------------------------------------------ */
-    function normalizeDriveAudioUrl(url) {
+    function normalizeExternalUrl(url) {
       if (!url) return "";
       const clean = url.trim();
-      // Detecta formato https://drive.google.com/file/d/FILE_ID/view...
+      // Si el usuario pega un enlace de vista de GitHub (github.com/user/repo/blob/main/file), convertir a raw.githubusercontent.com
+      const ghBlobMatch = clean.match(/^https?:\/\/github\.com\/([^\/]+)\/([^\/]+)\/blob\/(.+)$/);
+      if (ghBlobMatch) {
+        return `https://raw.githubusercontent.com/${ghBlobMatch[1]}/${ghBlobMatch[2]}/${ghBlobMatch[3]}`;
+      }
+      // Detecta formato Google Drive https://drive.google.com/file/d/FILE_ID/view...
       const fileMatch = clean.match(/\/d\/([a-zA-Z0-9_-]+)/);
-      if (fileMatch && fileMatch[1]) {
+      if (fileMatch && fileMatch[1] && clean.includes("drive.google.com")) {
         return `https://drive.google.com/uc?export=download&id=${fileMatch[1]}`;
       }
       // Detecta formato https://drive.google.com/open?id=FILE_ID o uc?id=FILE_ID
@@ -1824,9 +1838,9 @@
         const catalog = getSongCatalog();
         const catSong = catalog.find(s => s.id === key);
         if (catSong && catSong.driveUrl) {
-          badge.innerHTML = `☁️ Google Drive listo`;
+          badge.innerHTML = `🌐 Enlace MP3 listo`;
         } else if (catSong && catSong.mp3File) {
-          badge.innerHTML = `🎧 MP3 listo: <em>${escapeHtml(catSong.mp3File)}</em>`;
+          badge.innerHTML = `🎧 MP3 local listo: <em>${escapeHtml(catSong.mp3File)}</em>`;
         } else {
           badge.innerHTML = `🎹 Melodía base (sin audio vinculado)`;
         }
@@ -2447,12 +2461,12 @@
     }
 
     const SONG_REPOSITORY_SEED = [
-      { id: "count", title: "Count on Me", artist: "Bruno Mars", activities: ["Calentamiento", "Fase 2", "Fase 3"], level: "Pre A1 • Presente Simple & Can", driveUrl: "", mp3File: null, lyricFile: null, synthesizedKey: "count" },
-      { id: "try", title: "Try Everything", artist: "Shakira", activities: ["Fase 2", "Fase 3"], level: "Pre A1 • Want to", driveUrl: "", mp3File: null, lyricFile: null, synthesizedKey: "try" },
-      { id: "lemon", title: "Lemon Tree", artist: "Fools Garden", activities: ["Calentamiento", "Fase 2", "Fase 3"], level: "Pre A1 • Presente Simple", driveUrl: "", mp3File: null, lyricFile: null, synthesizedKey: "lemon" },
-      { id: "thunder", title: "Thunder", artist: "Imagine Dragons", activities: ["Fase 1", "Fase 2", "Fase 3"], level: "Pre A1 • Emociones", driveUrl: "", mp3File: null, lyricFile: null, synthesizedKey: "thunder" },
-      { id: "sunroof", title: "Sunroof", artist: "Nicky Youre & dazy", activities: ["Fase 1", "Fase 2", "Fase 3"], level: "Pre A1 • Gustos", driveUrl: "", mp3File: null, lyricFile: null, synthesizedKey: "sunroof" },
-      { id: "bruno", title: "We Don't Talk About Bruno", artist: "Encanto (Disney)", activities: ["Fase 2", "Fase 3"], level: "Pre A1 • Familia", driveUrl: "", mp3File: null, lyricFile: null, synthesizedKey: "bruno" }
+      { id: "count", title: "Count on Me", artist: "Bruno Mars", activities: ["Calentamiento", "Fase 2", "Fase 3"], level: "Pre A1 • Presente Simple & Can", driveUrl: "", lyricUrl: "", lyricText: "", mp3File: null, lyricFile: null, synthesizedKey: "count" },
+      { id: "try", title: "Try Everything", artist: "Shakira", activities: ["Fase 2", "Fase 3"], level: "Pre A1 • Want to", driveUrl: "", lyricUrl: "", lyricText: "", mp3File: null, lyricFile: null, synthesizedKey: "try" },
+      { id: "lemon", title: "Lemon Tree", artist: "Fools Garden", activities: ["Calentamiento", "Fase 2", "Fase 3"], level: "Pre A1 • Presente Simple", driveUrl: "", lyricUrl: "", lyricText: "", mp3File: null, lyricFile: null, synthesizedKey: "lemon" },
+      { id: "thunder", title: "Thunder", artist: "Imagine Dragons", activities: ["Fase 1", "Fase 2", "Fase 3"], level: "Pre A1 • Emociones", driveUrl: "", lyricUrl: "", lyricText: "", mp3File: null, lyricFile: null, synthesizedKey: "thunder" },
+      { id: "sunroof", title: "Sunroof", artist: "Nicky Youre & dazy", activities: ["Fase 1", "Fase 2", "Fase 3"], level: "Pre A1 • Gustos", driveUrl: "", lyricUrl: "", lyricText: "", mp3File: null, lyricFile: null, synthesizedKey: "sunroof" },
+      { id: "bruno", title: "We Don't Talk About Bruno", artist: "Encanto (Disney)", activities: ["Fase 2", "Fase 3"], level: "Pre A1 • Familia", driveUrl: "", lyricUrl: "", lyricText: "", mp3File: null, lyricFile: null, synthesizedKey: "bruno" }
     ];
 
     function normalizeSongActivities(song) {
@@ -2524,6 +2538,8 @@
       return list.map(s => ({
         ...s,
         driveUrl: s.driveUrl || "",
+        lyricUrl: s.lyricUrl || "",
+        lyricText: s.lyricText || "",
         activities: normalizeSongActivities(s)
       }));
     }
@@ -2549,7 +2565,8 @@
       listEl.innerHTML = filtered.map(song => {
         const acts = normalizeSongActivities(song);
         const actsLabel = acts.join(", ");
-        const hasDrive = Boolean(song.driveUrl && song.driveUrl.trim());
+        const hasAudioUrl = Boolean(song.driveUrl && song.driveUrl.trim());
+        const hasLyrics = Boolean((song.lyricUrl && song.lyricUrl.trim()) || (song.lyricText && song.lyricText.trim()) || song.lyricFile);
         return `
         <div class="audio-row-card" data-song-id="${song.id}">
           <div style="flex:1; min-width:220px;">
@@ -2559,14 +2576,14 @@
               ${escapeHtml(actsLabel)} • ${escapeHtml(song.level)}
             </span>
             <div style="margin-top:6px; font-size:0.78rem; display:flex; flex-wrap:wrap; gap:4px;">
-              <span class="badge-mini" style="background:${hasDrive ? '#DBEAFE' : '#F1F5F9'}; color:${hasDrive ? '#1E40AF' : '#64748B'}; padding:2px 8px; border-radius:999px; border:1.5px solid var(--border-sketch);">
-                ${hasDrive ? '☁️ Google Drive vinculado' : '☁️ Sin enlace Drive'}
+              <span class="badge-mini" style="background:${hasAudioUrl ? '#DBEAFE' : '#F1F5F9'}; color:${hasAudioUrl ? '#1E40AF' : '#64748B'}; padding:2px 8px; border-radius:999px; border:1.5px solid var(--border-sketch);">
+                ${hasAudioUrl ? '🌐 Enlace MP3 vinculado' : '🌐 Sin enlace MP3'}
               </span>
               <span class="badge-mini" style="background:${song.mp3File ? '#DCFCE7' : '#F1F5F9'}; color:${song.mp3File ? '#166534' : '#64748B'}; padding:2px 8px; border-radius:999px; border:1.5px solid var(--border-sketch);">
                 ${song.mp3File ? '🎧 MP3 local' : '🎧 Sin MP3 local'}
               </span>
-              <span class="badge-mini" style="background:${song.lyricFile ? '#DCFCE7' : '#F1F5F9'}; color:${song.lyricFile ? '#166534' : '#64748B'}; padding:2px 8px; border-radius:999px; border:1.5px solid var(--border-sketch);">
-                ${song.lyricFile ? '📄 Letra asignada' : '📄 Sin letra'}
+              <span class="badge-mini" style="background:${hasLyrics ? '#FEF3C7' : '#F1F5F9'}; color:${hasLyrics ? '#92400E' : '#64748B'}; padding:2px 8px; border-radius:999px; border:1.5px solid var(--border-sketch);">
+                ${song.lyricUrl && song.lyricUrl.trim() ? '🔗 Enlace Lyrics' : (hasLyrics ? '📄 Lyrics listos' : '📄 Sin lyrics')}
               </span>
             </div>
           </div>
@@ -2603,7 +2620,7 @@
       // 1. Prioridad: Enlace de Google Drive
       if (song.driveUrl && song.driveUrl.trim()) {
         try {
-          const streamUrl = normalizeDriveAudioUrl(song.driveUrl);
+          const streamUrl = normalizeExternalUrl(song.driveUrl);
           currentHtmlAudio = new Audio(streamUrl);
           currentHtmlAudio.onended = () => {
             currentHtmlAudio = null;
@@ -2678,7 +2695,7 @@
         const lyricBoxId = `phaseLyricViewer-${phase.replace(/\s+/g, "_")}`;
         const subtitleText = (phase === "Fase 2" || phase === "Fase 3")
           ? "Todas las canciones del catálogo están disponibles en esta fase. Elige cualquiera y reproduce su audio."
-          : "Reproduce la canción vinculada en Google Drive o MP3 para acompañar esta actividad.";
+          : "Reproduce la canción vinculada por enlace web o MP3 para acompañar esta actividad.";
 
         container.innerHTML = `
           <div class="sticker-card" style="background:linear-gradient(135deg, #FFFDF7 0%, #E0F5F2 100%); padding:14px 16px; margin-bottom:16px;">
@@ -2692,7 +2709,7 @@
                   ${songs.map(s => {
                     const acts = normalizeSongActivities(s);
                     const tag = acts.includes("Libre") ? "(Todas las fases)" : (acts.length > 1 ? `(${acts.join(" + ")})` : "");
-                    const icon = (s.driveUrl && s.driveUrl.trim()) ? '☁️' : (s.mp3File ? '🎧' : '🎹');
+                    const icon = (s.driveUrl && s.driveUrl.trim()) ? '🌐' : (s.mp3File ? '🎧' : '🎹');
                     return `
                     <option value="${s.id}">
                       ${icon} ${escapeHtml(s.title)} – ${escapeHtml(s.artist)} ${escapeHtml(tag)}
@@ -2734,6 +2751,35 @@
       box.dataset.currentSong = song.id;
       box.style.display = "block";
 
+      // 1. Prioridad: Enlace web de Lyrics (.txt en GitHub Pages / Raw / URL directa)
+      if (song.lyricUrl && song.lyricUrl.trim()) {
+        box.innerHTML = `<em>⏳ Cargando lyrics desde enlace...</em>`;
+        try {
+          const resolvedLyricUrl = normalizeExternalUrl(song.lyricUrl);
+          const resp = await fetch(resolvedLyricUrl);
+          if (resp.ok) {
+            const text = await resp.text();
+            box.innerHTML = `<strong>🔗 Lyrics de ${escapeHtml(song.title)}:</strong>\n\n${escapeHtml(text)}`;
+            return;
+          }
+        } catch (e) {
+          console.warn("No se pudo descargar el .txt por fetch, intentando respaldo:", e);
+        }
+        // Si fetch falla por CORS o formato, mostrar enlace directo clicable
+        const safeHref = escapeHtml(normalizeExternalUrl(song.lyricUrl));
+        if (!song.lyricText && !song.lyricFile) {
+          box.innerHTML = `<strong>🔗 Enlace externo de Lyrics:</strong> <a href="${safeHref}" target="_blank" rel="noopener noreferrer" style="color:var(--accent-purple); font-weight:bold;">Abrir letra de ${escapeHtml(song.title)} en una pestaña nueva ↗️</a>`;
+          return;
+        }
+      }
+
+      // 2. Segunda opción: Letra escrita/pegada directamente en el modal
+      if (song.lyricText && song.lyricText.trim()) {
+        box.innerHTML = `<strong>📄 Lyrics de ${escapeHtml(song.title)}:</strong>\n\n${escapeHtml(song.lyricText)}`;
+        return;
+      }
+
+      // 3. Tercera opción: Archivo .txt guardado en IndexedDB
       if (song.lyricFile) {
         try {
           const blob = await getFileFromDB(`lyric_${song.id}`);
@@ -2745,11 +2791,12 @@
         } catch (e) {}
       }
 
+      // 4. Cuarta opción: Ficha base incluida en el repositorio
       const repoSong = SONG_REPOSITORY.find(r => r.id === song.id);
       if (repoSong && repoSong.lyricsWorksheet) {
         box.innerHTML = `<strong>📄 Ficha base de ${escapeHtml(song.title)}:</strong>\n\n${escapeHtml(repoSong.lyricsWorksheet)}`;
       } else {
-        box.innerHTML = `<em>Esta canción aún no tiene un archivo de letra (.txt) asignado. Puedes cargarlo en la pestaña 📁 Carpeta Offline → ✏️ Editar.</em>`;
+        box.innerHTML = `<em>Esta canción aún no tiene lyrics asignados. Puedes pegar un enlace (.txt) o escribir la letra en 📁 Carpeta Offline → ✏️ Editar.</em>`;
       }
     }
 
@@ -2788,6 +2835,8 @@
       setModalActivityCheckboxes(["Calentamiento"]);
       document.getElementById("editSongLevel").value = "";
       document.getElementById("editSongDriveUrl").value = "";
+      document.getElementById("editSongLyricUrl").value = "";
+      document.getElementById("editSongLyricText").value = "";
       document.getElementById("editSongMp3Status").textContent = "(ninguno)";
       document.getElementById("editSongLyricStatus").textContent = "(ninguna)";
       editingMp3File = null;
@@ -2807,6 +2856,8 @@
       setModalActivityCheckboxes(normalizeSongActivities(song));
       document.getElementById("editSongLevel").value = song.level;
       document.getElementById("editSongDriveUrl").value = song.driveUrl || "";
+      document.getElementById("editSongLyricUrl").value = song.lyricUrl || "";
+      document.getElementById("editSongLyricText").value = song.lyricText || "";
       document.getElementById("editSongMp3Status").textContent = song.mp3File ? `(${song.mp3File})` : "(ninguno)";
       document.getElementById("editSongLyricStatus").textContent = song.lyricFile ? `(${song.lyricFile})` : "(ninguna)";
       editingMp3File = null;
@@ -2843,6 +2894,8 @@
       const activity = activities[0] || "Calentamiento";
       const level = document.getElementById("editSongLevel").value.trim() || "Sin especificar";
       const driveUrl = document.getElementById("editSongDriveUrl").value.trim();
+      const lyricUrl = document.getElementById("editSongLyricUrl").value.trim();
+      const lyricText = document.getElementById("editSongLyricText").value.trim();
 
       if (!title) {
         alert("El título de la canción es obligatorio.");
@@ -2860,6 +2913,8 @@
           id: "song_" + Date.now() + "_" + Math.random().toString(36).slice(2, 7),
           synthesizedKey: "count",
           driveUrl: "",
+          lyricUrl: "",
+          lyricText: "",
           mp3File: null,
           lyricFile: null
         };
@@ -2872,6 +2927,8 @@
       song.activity = activity;
       song.level = level;
       song.driveUrl = driveUrl;
+      song.lyricUrl = lyricUrl;
+      song.lyricText = lyricText;
 
       if (editingMp3File) {
         await putFileInDB(`mp3_${song.id}`, editingMp3File);
@@ -2929,43 +2986,84 @@
       const song = catalog.find(s => s.id === songId);
       if (!song) return;
 
-      if (!song.lyricFile) {
-        const repoSong = SONG_REPOSITORY.find(r => r.id === song.id);
-        if (repoSong && repoSong.lyricsWorksheet) {
-          const blob = new Blob([repoSong.lyricsWorksheet], { type: "text/plain;charset=utf-8" });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement("a");
-          a.href = url;
-          a.download = `Ficha_${safeFileName(song.title)}_SanGabriel.txt`;
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          URL.revokeObjectURL(url);
-          playSuccessSound();
-          return;
-        }
-        alert("Esta canción no tiene letra asignada. Usa ✏️ Editar para asignar un archivo .txt.");
+      // 1. Si hay enlace de lyrics, intentar descargar el texto
+      if (song.lyricUrl && song.lyricUrl.trim()) {
+        const resolvedUrl = normalizeExternalUrl(song.lyricUrl);
+        try {
+          const resp = await fetch(resolvedUrl);
+          if (resp.ok) {
+            const text = await resp.text();
+            const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `Lyrics_${safeFileName(song.title)}_SanGabriel.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            playSuccessSound();
+            return;
+          }
+        } catch (e) {}
+        window.open(resolvedUrl, "_blank", "noopener,noreferrer");
         return;
       }
 
-      try {
-        const blob = await getFileFromDB(`lyric_${song.id}`);
-        if (!blob) {
-          alert("No se encontró el archivo de letra en el navegador. Vuelve a asignarlo desde ✏️ Editar.");
-          return;
-        }
+      // 2. Si hay letra escrita/pegada directamente
+      if (song.lyricText && song.lyricText.trim()) {
+        const blob = new Blob([song.lyricText], { type: "text/plain;charset=utf-8" });
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = song.lyricFile || `${safeFileName(song.title)}_letra.txt`;
+        a.download = `Lyrics_${safeFileName(song.title)}_SanGabriel.txt`;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
         playSuccessSound();
-      } catch (e) {
-        alert("No se pudo descargar la letra: " + e.message);
+        return;
       }
+
+      // 3. Si hay archivo .txt en IndexedDB
+      if (song.lyricFile) {
+        try {
+          const blob = await getFileFromDB(`lyric_${song.id}`);
+          if (blob) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = song.lyricFile || `${safeFileName(song.title)}_letra.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            playSuccessSound();
+            return;
+          }
+        } catch (e) {
+          alert("No se pudo descargar la letra: " + e.message);
+          return;
+        }
+      }
+
+      // 4. Respaldo: ficha base
+      const repoSong = SONG_REPOSITORY.find(r => r.id === song.id);
+      if (repoSong && repoSong.lyricsWorksheet) {
+        const blob = new Blob([repoSong.lyricsWorksheet], { type: "text/plain;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `Ficha_${safeFileName(song.title)}_SanGabriel.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        playSuccessSound();
+        return;
+      }
+
+      alert("Esta canción no tiene lyrics asignados. Usa ✏️ Editar para pegar el enlace o escribir la letra.");
     }
 
     async function chooseSongsFolder() {
