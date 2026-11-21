@@ -2461,12 +2461,84 @@
     }
 
     const SONG_REPOSITORY_SEED = [
-      { id: "count", title: "Count on Me", artist: "Bruno Mars", activities: ["Calentamiento", "Fase 2", "Fase 3"], level: "Pre A1 • Presente Simple & Can", driveUrl: "", lyricUrl: "", lyricText: "", mp3File: null, lyricFile: null, synthesizedKey: "count" },
-      { id: "try", title: "Try Everything", artist: "Shakira", activities: ["Fase 2", "Fase 3"], level: "Pre A1 • Want to", driveUrl: "", lyricUrl: "", lyricText: "", mp3File: null, lyricFile: null, synthesizedKey: "try" },
-      { id: "lemon", title: "Lemon Tree", artist: "Fools Garden", activities: ["Calentamiento", "Fase 2", "Fase 3"], level: "Pre A1 • Presente Simple", driveUrl: "", lyricUrl: "", lyricText: "", mp3File: null, lyricFile: null, synthesizedKey: "lemon" },
-      { id: "thunder", title: "Thunder", artist: "Imagine Dragons", activities: ["Fase 1", "Fase 2", "Fase 3"], level: "Pre A1 • Emociones", driveUrl: "", lyricUrl: "", lyricText: "", mp3File: null, lyricFile: null, synthesizedKey: "thunder" },
-      { id: "sunroof", title: "Sunroof", artist: "Nicky Youre & dazy", activities: ["Fase 1", "Fase 2", "Fase 3"], level: "Pre A1 • Gustos", driveUrl: "", lyricUrl: "", lyricText: "", mp3File: null, lyricFile: null, synthesizedKey: "sunroof" },
-      { id: "bruno", title: "We Don't Talk About Bruno", artist: "Encanto (Disney)", activities: ["Fase 2", "Fase 3"], level: "Pre A1 • Familia", driveUrl: "", lyricUrl: "", lyricText: "", mp3File: null, lyricFile: null, synthesizedKey: "bruno" }
+      {
+        id: "count",
+        title: "Count on Me",
+        artist: "Bruno Mars",
+        activities: ["Calentamiento", "Fase 2", "Fase 3"],
+        level: "Pre A1 • Presente Simple & Can",
+        driveUrl: "https://github.com/Duv1303/OVA-Songs-That-Write-My-Story/blob/main/audio/Count_on_Me_-_Bruno_Mars.mp3",
+        lyricUrl: "https://github.com/Duv1303/OVA-Songs-That-Write-My-Story/blob/main/lyrics/Count_on_Me_letra.txt",
+        lyricText: "",
+        mp3File: null,
+        lyricFile: null,
+        synthesizedKey: "count"
+      },
+      {
+        id: "try",
+        title: "Try Everything",
+        artist: "Shakira",
+        activities: ["Fase 2", "Fase 3"],
+        level: "Pre A1 • Want to",
+        driveUrl: "https://github.com/Duv1303/OVA-Songs-That-Write-My-Story/blob/main/audio/Try_Everything.mp3",
+        lyricUrl: "https://github.com/Duv1303/OVA-Songs-That-Write-My-Story/blob/main/lyrics/Try_Everything_letra.txt",
+        lyricText: "",
+        mp3File: null,
+        lyricFile: null,
+        synthesizedKey: "try"
+      },
+      {
+        id: "lemon",
+        title: "Lemon Tree",
+        artist: "Fools Garden",
+        activities: ["Calentamiento", "Fase 2", "Fase 3"],
+        level: "Pre A1 • Presente Simple",
+        driveUrl: "https://github.com/Duv1303/OVA-Songs-That-Write-My-Story/blob/main/audio/Lemon_Tree.mp3",
+        lyricUrl: "https://github.com/Duv1303/OVA-Songs-That-Write-My-Story/blob/main/lyrics/Lemon_Tree_letra.txt",
+        lyricText: "",
+        mp3File: null,
+        lyricFile: null,
+        synthesizedKey: "lemon"
+      },
+      {
+        id: "thunder",
+        title: "Thunder",
+        artist: "Imagine Dragons",
+        activities: ["Fase 1", "Fase 2", "Fase 3"],
+        level: "Pre A1 • Emociones",
+        driveUrl: "https://github.com/Duv1303/OVA-Songs-That-Write-My-Story/blob/main/audio/Thunder.mp3",
+        lyricUrl: "https://github.com/Duv1303/OVA-Songs-That-Write-My-Story/blob/main/lyrics/Thunder_letra.txt",
+        lyricText: "",
+        mp3File: null,
+        lyricFile: null,
+        synthesizedKey: "thunder"
+      },
+      {
+        id: "sunroof",
+        title: "Sunroof",
+        artist: "Nicky Youre & dazy",
+        activities: ["Fase 1", "Fase 2", "Fase 3"],
+        level: "Pre A1 • Gustos",
+        driveUrl: "https://github.com/Duv1303/OVA-Songs-That-Write-My-Story/blob/main/audio/Sunroof.mp3",
+        lyricUrl: "https://github.com/Duv1303/OVA-Songs-That-Write-My-Story/blob/main/lyrics/Sunroof_letra.txt",
+        lyricText: "",
+        mp3File: null,
+        lyricFile: null,
+        synthesizedKey: "sunroof"
+      },
+      {
+        id: "bruno",
+        title: "We Don't Talk About Bruno",
+        artist: "Encanto (Disney)",
+        activities: ["Fase 2", "Fase 3"],
+        level: "Pre A1 • Familia",
+        driveUrl: "https://github.com/Duv1303/OVA-Songs-That-Write-My-Story/blob/main/audio/We_Don_t_Talk_About_Bruno.mp3",
+        lyricUrl: "https://github.com/Duv1303/OVA-Songs-That-Write-My-Story/blob/main/lyrics/We_don_t_talk_about_Bruno_letra.txt",
+        lyricText: "",
+        mp3File: null,
+        lyricFile: null,
+        synthesizedKey: "bruno"
+      }
     ];
 
     function normalizeSongActivities(song) {
@@ -2535,13 +2607,16 @@
         list = JSON.parse(JSON.stringify(SONG_REPOSITORY_SEED));
         localStorage.setItem("san_gabriel_song_catalog", JSON.stringify(list));
       }
-      return list.map(s => ({
-        ...s,
-        driveUrl: s.driveUrl || "",
-        lyricUrl: s.lyricUrl || "",
-        lyricText: s.lyricText || "",
-        activities: normalizeSongActivities(s)
-      }));
+      return list.map(s => {
+        const seedMatch = SONG_REPOSITORY_SEED.find(seed => seed.id === s.id);
+        return {
+          ...s,
+          driveUrl: (s.driveUrl && s.driveUrl.trim()) ? s.driveUrl : (seedMatch ? seedMatch.driveUrl : ""),
+          lyricUrl: (s.lyricUrl && s.lyricUrl.trim()) ? s.lyricUrl : (seedMatch ? seedMatch.lyricUrl : ""),
+          lyricText: s.lyricText || "",
+          activities: normalizeSongActivities(s)
+        };
+      });
     }
 
     function saveSongCatalog(catalog) {
